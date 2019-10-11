@@ -30,6 +30,11 @@
         <version>${version.teiid.spring-boot}</version>
       </dependency>
       <dependency>
+        <groupId>org.teiid</groupId>
+        <artifactId>spring-data-rest</artifactId>
+        <version>${version.teiid.spring-boot}</version>
+      </dependency>        
+      <dependency>
         <groupId>org.teiid.connectors</groupId>
         <artifactId>translator-odata</artifactId>
         <version>${version.teiid}</version>

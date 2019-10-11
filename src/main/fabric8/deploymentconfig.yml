@@ -37,7 +37,7 @@ spec:
             fieldRef:
               fieldPath: metadata.namespace             
         - name: SPRING_TEIID_REST_SAPDB_ENDPOINT
-          value: http://rdbms-springboot-syndesis.192.168.42.73.nip.io/odata
+          value: https://rdbms-springboot-syndesis.192.168.42.73.nip.io/odata
         - name: JAVA_DEBUG
           value: "true"
         - name: AB_JMX_EXPORTER_CONFIG
