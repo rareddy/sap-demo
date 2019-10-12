@@ -109,11 +109,19 @@ public class SAPMetadataProcessor extends ODataMetadataProcessor {
         }
         Column c = mf.addColumn(columnName, ODataTypeManager.teiidType(ep.getType().getFullyQualifiedTypeName()), table);
         c.setNameInSource(ep.getName());
-        c.setPrecision(ep.getPrecision());
-        c.setScale(ep.getScale());
-        c.setLength(ep.getMaxLength());
+        if (ep.getPrecision() != null){
+            c.setPrecision(ep.getPrecision());
+        }
+        if (ep.getScale() != null){
+            c.setScale(ep.getScale());
+        }
+        if (ep.getMaxLength() != null){
+            c.setLength(ep.getMaxLength());
+        }
         c.setNullType(ep.isNullable()?NullType.Nullable:NullType.No_Nulls);
-        c.setDefaultValue(ep.getDefaultValue());
+        if (ep.getDefaultValue() != null){
+            c.setDefaultValue(ep.getDefaultValue());
+        }
 
         Iterable<? extends NamespacedAnnotation> annotations = ep.getAnnotations();
         for (NamespacedAnnotation annotation:annotations) {
